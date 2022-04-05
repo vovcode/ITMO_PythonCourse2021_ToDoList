@@ -1,0 +1,33 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}" style="text-decoration: none;">&#8592; Назад</a>
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {%csrf_token%}
+        <label>Название дела: </label>
+        {{form.title}}
+        <label>Описание дела: </label>
+        {{form.description}}
+        <label>Сделано</label>
+        {{form.complete}}
+        <p></p>
+        <input class ="button" type="submit" value="Создать">
+    </form>
+</div>
+
+<!--<div class="card-body">
+    <form method="POST" action="">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input class ="button" type="submit" value="Создать">
+    </form>
+</div>-->
+
+
+
+{% endblock content %}
